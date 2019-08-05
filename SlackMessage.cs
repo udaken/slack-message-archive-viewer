@@ -69,6 +69,7 @@ namespace slack_message_archive_viewer
     [DataContract]
     class SlackUser
     {
+        public static SlackUser Default => new SlackUser() { id = "", name = "<Empty>" };
         [DataMember]
         internal string id { get; set; }
 

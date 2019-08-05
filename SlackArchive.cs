@@ -64,7 +64,7 @@ namespace slack_message_archive_viewer
         }
         public SlackUser GetUserFromId(string id)
         {
-            return users.Where(user => user.id == id).Single();
+            return users.SingleOrDefault(user => user.id == id) ?? SlackUser.Default;
         }
 
         public IEnumerable<SlackUser> Users
